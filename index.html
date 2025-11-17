@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahti - Alimentation Marocaine Santé</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body style="background-color: #121629;">
+    <header id="mainHeader">
+        <div class="div-logo">
+            <img src="./saha.png" class="logo">
+        </div>
+        <div>
+            <nav>
+            <a onclick="showPage('accueil', this)" class="active">Accueil</a>
+            <a onclick="showPage('apropos', this)">À propos</a>
+            <a onclick="showPage('espaces', this)">Espaces membres</a>
+            <a onclick="showPage('bulking', this)">Bulking</a>
+            <a onclick="showPage('faq', this)">FAQ</a>
+            <a onclick="showPage('suggestions', this)">Suggestions de repas</a>
+        </nav>
+        </div>
+        
+    </header>
+
+    <div id="accueil" class="page active">
+        <section class="hero">
+            <div class="hero-badge">🇲🇦 CUISINE MAROCAINE ÉQUILIBRÉE</div>
+            <h1>
+                Redécouvrez les saveurs du <span class="highlight">Maroc</span><br>
+                dans une version <span class="highlight">saine et équilibrée</span>
+            </h1>
+            <p>
+                Couscous, tagines, pastilla... Tous vos plats préférés adaptés à vos objectifs nutritionnels.
+            </p>
+            <button class="btn-primary" onclick="showPage('suggestions', document.querySelector('nav a[onclick*=\'suggestions\']'))">
+                Découvrir nos plats
+            </button>
+        </section>
+    </div>
+
+    <div id="apropos" class="page">
+        <section class="features">
+            <h2>Pourquoi choisir Sahti ?</h2>
+            <p class="features-subtitle">
+                Nous combinons l'authenticité de la cuisine marocaine avec les principes de la nutrition moderne
+            </p>
+            <div class="features-grid">
+                <div class="feature-card" onclick="showInfoModal(
+                    'Plats Traditionnels', 
+                    '🍽', 
+                    'linear-gradient(135deg, #2a2f4a, #1a1f35)', 
+                    `<h3>Le Goût sans la Culpabilité</h3>
+                    <p>Nous revisitons les classiques comme le Tagine ou le Couscous en appliquant des principes diététiques modernes. Cela inclut :</p>
+                    <ul>
+                        <li>Remplacer le sucre raffiné par des alternatives saines (miel, dattes).</li>
+                        <li>Contrôler précisément la quantité de sel et d'huile d'olive (mesurée à la cuillère, pas à l'œil).</li>
+                        <li>Utiliser des méthodes de cuisson saines (vapeur, étouffée) qui préservent les nutriments et nécessitent moins de matière grasse.</li>
+                    </ul>
+                    <p>Le résultat : le même goût authentique que vous aimez, parfaitement aligné avec vos objectifs.</p>`
+                )">
+                    <div class="feature-icon">🍽</div>
+                    <h3>Plats Traditionnels</h3>
+                    <p>Des recettes marocaines authentiques revisitées pour être plus légères et nutritives.</p>
+                </div>
+                <div class="feature-card" onclick="showInfoModal(
+                    'Équilibre Nutritionnel', 
+                    '⚖', 
+                    'linear-gradient(135deg, #2a2f4a, #1a1f35)', 
+                    `<h3>La Science derrière l'Assiette</h3>
+                    <p>Chaque recette sur Sahti n'est pas seulement délicieuse, elle est scientifiquement équilibrée. Notre processus :</p>
+                    <ul>
+                        <li><strong>Analyse des Macros :</strong> Nous calculons avec précision les Protéines, Glucides et Lipides pour chaque portion.</li>
+                        <li><strong>Calcul des Calories :</strong> Plus de devinettes. Chaque plat affiche son apport calorique exact.</li>
+                        <li><strong>Fibres & Micronutriments :</strong> Nous nous assurons que vos repas sont riches en fibres, vitamines et minéraux essentiels à votre bien-être général.</li>
+                    </ul>`
+                )">
+                    <div class="feature-icon">⚖</div>
+                    <h3>Équilibre Nutritionnel</h3>
+                    <p>Chaque plat est analysé et équilibré pour respecter vos macros.</p>
+                </div>
+                <div class="feature-card" onclick="showInfoModal(
+                    'Coaching Personnalisé', 
+                    '👨‍🍳', 
+                    'linear-gradient(135deg, #2a2f4a, #1a1f35)', 
+                    `<h3>Vous n'êtes pas seul</h3>
+                    <p>Le coaching n'est pas universel. Nous commençons par une consultation approfondie pour définir vos objectifs (prise de masse, perte de poids), votre style de vie et vos préférences alimentaires.</p>
+                    <p>Sur la base de cela, vous recevez :</p>
+                    <ul>
+                        <li>Un plan alimentaire 100% sur mesure.</li>
+                        <li>Des ajustements hebdomadaires basés sur vos progrès et votre ressenti.</li>
+                        <li>Un accès direct à nos experts pour répondre à toutes vos questions.</li>
+                    </ul>`
+                )">
+                    <div class="feature-icon">👨‍🍳</div>
+                    <h3>Coaching Personnalisé</h3>
+                    <p>Un accompagnement sur mesure pour atteindre vos objectifs.</p>
+                </div>
+                <div class="feature-card" onclick="showInfoModal(
+                    'Ingrédients Locaux', 
+                    '🌿', 
+                    'linear-gradient(135deg, #2a2f4a, #1a1f35)', 
+                    `<h3>Le meilleur du Maroc</h3>
+                    <p>Nous sommes fiers de soutenir l'agriculture marocaine. Utiliser des produits locaux et de saison (comme les légumes du Souss, les poissons d'Agadir, l'huile d'Argan...) n'est pas seulement un choix éthique, c'est un choix de qualité.</p>
+                    <p>Des ingrédients plus frais signifient :</p>
+                    <ul>
+                        <li>Une densité nutritionnelle plus élevée.</li>
+                        <li>Un goût incomparable.</li>
+                        <li>Un soutien direct à l'économie locale.</li>
+                    </ul>`
+                )">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Ingrédients Locaux</h3>
+                    <p>Des produits frais, de saison et issus du terroir marocain.</p>
+                </div>
+                <div class="feature-card" onclick="showInfoModal(
+                    'Suivi Digital', 
+                    '📱', 
+                    'linear-gradient(135deg, #2a2f4a, #1a1f35)', 
+                    `<h3>Votre QG de Progression</h3>
+                    <p>Votre Espace Membre est le cœur de votre transformation. Il ne s'agit pas seulement d'un site web, c'est votre journal de bord personnel.</p>
+                    <p>Depuis votre tableau de bord, vous pouvez :</p>
+                    <ul>
+                        <li>Consulter votre plan alimentaire du jour avec les macros exactes.</li>
+                        <li>Enregistrer vos séances d'entraînement.</li>
+                        <li>Suivre vos graphiques de progression (poids, mensurations, force).</li>
+                        <li>Accéder à des recettes exclusives et à des conseils.</li>
+                    </ul>`
+                )">
+                    <div class="feature-icon">📱</div>
+                    <h3>Suivi Digital</h3>
+                    <p>Accédez à vos plans de repas et suivez vos progrès.</p>
+                </div>
+                <div class="feature-card" onclick="showInfoModal(
+                    'Résultats Garantis', 
+                    '🎯', 
+                    'linear-gradient(135deg, #2a2f4a, #1a1f35)', 
+                    `<h3>Notre Engagement</h3>
+                    <p>Nous avons une confiance absolue en notre méthode, car elle est basée sur la science et a été testée par des centaines de membres.</p>
+                    <p>Notre garantie est simple :</p>
+                    <p>Si vous suivez votre plan nutritionnel et votre programme d'entraînement avec une adhérence d'au moins 90% pendant 12 semaines complètes, et que vous ne constatez aucun progrès mesurable (perte de poids, gain de muscle, amélioration des mensurations), nous travaillerons avec vous gratuitement jusqu'à ce que vous les obteniez.</p>`
+                )">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Résultats Garantis</h3>
+                    <p>Une méthode éprouvée qui a aidé des centaines de Marocains.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="espaces" class="page">
+        <div id="loginSection" class="auth-page">
+            <div class="auth-container">
+                <div class="auth-title">🏥 SAHTI</div>
+                <div class="auth-subtitle">Votre santé, notre priorité</div>
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" id="loginEmail" placeholder="votre.email@exemple.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Mot de passe</label>
+                        <input type="password" class="form-input" id="loginPassword" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="auth-btn">🔐 Se Connecter</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="memberDashboard" class="member-area" style="display: none;">
+            <div class="member-header-v2">
+                <div class="user-profile-info">
+                    <div class="user-avatar">?</div>
+                    <div class="user-details">
+                        <h3 id="userName">Inconnu</h3>
+                        <p>Membre depuis Octobre 2024</p>
+                        <p>Programme: Prise de Masse 12 Semaines</p>
+                    </div>
+                    <span class="premium-badge">Membre Premium</span>
+                </div>
+                <button class="logout-btn-v2" onclick="handleLogout()">Déconnexion</button>
+            </div>
+            <div class="dashboard-container">
+                <div class="dashboard-section">
+                    <h2 class="section-title">📊 Évolution Mensuelle</h2>
+                    <div class="stats-grid-v2">
+                        <div class="stat-card-v2">
+                            <div class="icon">🏋️</div>
+                            <div class="label">Poids Actuel</div>
+                            <div class="value">71.2 kg</div>
+                            <div class="sub-value green">+5.2 kg</div>
+                        </div>
+                        <div class="stat-card-v2">
+                            <div class="icon">💪</div>
+                            <div class="label">Tour de Bras</div>
+                            <div class="value">37.5 cm</div>
+                            <div class="sub-value green">+2.5 cm</div>
+                        </div>
+                        <div class="stat-card-v2">
+                            <div class="icon">🧘</div>
+                            <div class="label">Tour de Poitrine</div>
+                            <div class="value">101 cm</div>
+                            <div class="sub-value green">+3.8 cm</div>
+                        </div>
+                        <div class="stat-card-v2">
+                            <div class="icon">📈</div>
+                            <div class="label">Adhérence Nutrition</div>
+                            <div class="value">94%</div>
+                            <div class="sub-value blue">+12%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dashboard-section">
+                    <h2 class="section-title">🎯 Ma Progression</h2>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-label"><span>Programme de 12 semaines</span><span>58%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fg" style="width: 58%;"></div></div>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-label"><span>Prise de poids (Objectif: +8 kg)</span><span>65%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fg" style="width: 65%;"></div></div>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-label"><span>Force globale</span><span>72%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fg" style="width: 72%;"></div></div>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-label"><span>Tour de bras</span><span>70%</span></div>
+                        <div class="progress-bar-bg"><div class="progress-bar-fg" style="width: 70%;"></div></div>
+                    </div>
+                </div>
+                <div class="dashboard-section">
+                    <h2 class="section-title">🍽️ Plan Alimentaire du Jour (3150 Kcal)</h2>
+                    <div class="meal-plan-item">
+                        <div class="meal-plan-header"><h4>7h00 - Petit-Déjeuner</h4><span class="calories">750 kcal</span></div>
+                        <p class="meal-plan-body">3 Msemen protéinés, 4 oeufs brouillés, Jus d'orange frais</p>
+                        <div class="meal-plan-macros"><span>💪 45g protéines</span> | <span>🍞 82g glucides</span> | <span>🥑 22g lipides</span></div>
+                    </div>
+                    <div class="meal-plan-item">
+                        <div class="meal-plan-header"><h4>10h30 - Collation</h4><span class="calories">420 kcal</span></div>
+                        <p class="meal-plan-body">Shake protéiné maison, Amandes, Dates farcies</p>
+                        <div class="meal-plan-macros"><span>💪 32g protéines</span> | <span>🍞 45g glucides</span> | <span>🥑 18g lipides</span></div>
+                    </div>
+                    <div class="meal-plan-item">
+                        <div class="meal-plan-header"><h4>13h00 - Déjeuner</h4><span class="calories">920 kcal</span></div>
+                        <p class="meal-plan-body">Couscous protéiné XXL, Salade marocaine, Lben</p>
+                        <div class="meal-plan-macros"><span>💪 52g protéines</span> | <span>🍞 115g glucides</span> | <span>🥑 28g lipides</span></div>
+                    </div>
+                    <div class="meal-plan-item">
+                        <div class="meal-plan-header"><h4>17h00 - Post-Training</h4><span class="calories">580 kcal</span></div>
+                        <p class="meal-plan-body">Shake gainer maison, Banane, Miel</p>
+                        <div class="meal-plan-macros"><span>💪 38g protéines</span> | <span>🍞 85g glucides</span> | <span>🥑 12g lipides</span></div>
+                    </div>
+                    <div class="meal-plan-item">
+                        <div class="meal-plan-header"><h4>20h00 - Dîner</h4><span class="calories">680 kcal</span></div>
+                        <p class="meal-plan-body">Tajine poulet et légumes, Pain complet, Fruit</p>
+                        <div class="meal-plan-macros"><span>💪 48g protéines</span> | <span>🍞 75g glucides</span> | <span>🥑 20g lipides</span></div>
+                    </div>
+                </div>
+                <div class="dashboard-section">
+                    <h2 class="section-title">📓 Journal d'Entraînement</h2>
+                    <div class="training-log-entry">
+                        <h4 class="training-log-header">📅 Vendredi 13 Décembre - PUSH (Poitrine/Épaules/Triceps)</h4>
+                        <div class="training-log-exercise"><span>Développé Couché</span><span>4 x 10 - 80kg</span></div>
+                        <div class="training-log-exercise"><span>Développé Incliné</span><span>3 x 12 - 60kg</span></div>
+                        <div class="training-log-exercise"><span>Écartés Haltères</span><span>3 x 15 - 18kg</span></div>
+                        <div class="training-log-exercise"><span>Développé Militaire</span><span>4 x 10 - 50kg</span></div>
+                        <p class="training-log-summary">✓ Séance complétée - 85 min - Excellent ressenti !</p>
+                    </div>
+                </div>
+                <div class="dashboard-section">
+                    <h2 class="section-title">⚙️ Paramètres du Compte</h2>
+                    <form class="settings-form" onsubmit="event.preventDefault(); alert('Paramètres sauvegardés (simulation) !')">
+                        <div class="form-group"><label class="form-label">Nom Complet</label><input type="text" class="form-input" value="Inconnu"></div>
+                        <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" value="inconnu@email.com"></div>
+                        <div class="form-group"><label class="form-label">Poids Actuel (kg)</label><input type="number" step="0.1" class="form-input" value="71.2"></div>
+                        <div class="form-group"><label class="form-label">Objectif de Poids (kg)</label><input type="number" step="0.1" class="form-input" value="74"></div>
+                        <div class="form-group"><label class="form-label">Taille (cm)</label><input type="number" class="form-input" value="178"></div>
+                        <div class="form-group"><label class="form-label">Âge</label><input type="number" class="form-input" value="25"></div>
+                        <button type="submit" class="settings-btn">Sauvegarder les Changements</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="bulking" class="page">
+        <div class="main-content">
+            <div class="content-box" style="max-width: 800px;">
+                <h2 style="text-align: center;">Calculateur de Calories pour Bulking</h2>
+                <p style="margin-bottom: 20px; text-align: center; color: #ccc;">Calculez vos besoins caloriques pour une prise de masse optimale.</p>
+                <form id="bulking-calculator-form" onsubmit="handleBulkingCalc(event)" class="calculator-form">
+                    <div class="calculator-form-group"><label for="calc-age" class="calculator-label">Âge</label><input type="number" id="calc-age" class="calculator-input" required min="15" max="99" placeholder="ex: 25"></div>
+                    <div class="calculator-form-group"><label for="calc-sexe" class="calculator-label">Sexe</label><select id="calc-sexe" class="calculator-select" required><option value="homme">Homme</option><option value="femme">Femme</option></select></div>
+                    <div class="calculator-form-group"><label for="calc-poids" class="calculator-label">Poids (kg)</label><input type="number" id="calc-poids" class="calculator-input" required placeholder="ex: 75"></div>
+                    <div class="calculator-form-group"><label for="calc-taille" class="calculator-label">Taille (cm)</label><input type="number" id="calc-taille" class="calculator-input" required placeholder="ex: 178"></div>
+                    <div class="calculator-form-group full-width">
+                        <label for="calc-activite" class="calculator-label">Niveau d'activité</label>
+                        <select id="calc-activite" class="calculator-select" required>
+                            <option value="1.2">Sédentaire (peu ou pas d'exercice)</option>
+                            <option value="1.375">Léger (exercice 1-3 jours/sem.)</option>
+                            <option value="1.55">Modéré (exercice 3-5 jours/sem.)</option>
+                            <option value="1.725">Actif (exercice 6-7 jours/sem.)</option>
+                            <option value="1.9">Très Actif (métier physique ou 2x/jour)</option>
+                        </select>
+                    </div>
+                    <div class="calculator-form-group full-width"><button type="submit" class="btn-calculator">🔥 Calculer Mes Besoins</button></div>
+                </form>
+                <div id="bulking-results" class="calculator-results">
+                    <h3>Vos Besoins Estimés</h3>
+                    <div class="result-split">
+                        <div class="result-item"><div id="result-bmr" class="result-item-value">0</div><div class="result-item-label">Métabolisme de Base (BMR)</div></div>
+                        <div class="result-item"><div id="result-tdee" class="result-item-value">0</div><div class="result-item-label">Maintenance (TDEE)</div></div>
+                    </div>
+                    <div class="result-total">
+                        <div class="result-item-label">Objectif Bulking (+15%)</div>
+                        <div id="result-bulking" class="result-item-value">0</div>
+                        <div class="result-item-label">Calories / Jour</div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-box">
+                <h2>🍳 Recettes Marocaines pour le Bulking</h2>
+                <p style="color: #ccc; margin-bottom: 20px;">Des plats traditionnels optimisés pour la prise de masse musculaire.</p>
+                <div class="recipe-grid">
+                    
+                    <div class="recipe-card" onclick="showInfoModal(
+                        'Tajine Poulet Massif', 
+                        '💪', 
+                        'linear-gradient(135deg, #2a2f4a, #1a1f35)', 
+                        `<h3>Ingrédients Clés :</h3>
+                        <ul>
+                            <li>250g blanc de poulet</li>
+                            <li>1/2 oignon, 1 gousse d'ail</li>
+                            <li>150g de patates douces</li>
+                            <li>Poignée d'amandes et 4-5 pruneaux</li>
+                            <li>Épices (Curcuma, Gingembre, Cumin)</li>
+                            <li>1 cuillère à soupe d'huile d'olive</li>
+                        </ul>
+                        <h3>Préparation :</h3>
+                        <ol>
+                            <li>Faire dorer le poulet dans l'huile d'olive avec oignon et ail.</li>
+                            <li>Ajouter les épices et les patates douces coupées en dés.</li>
+                            <li>Couvrir d'un peu d'eau et laisser mijoter 30 min.</li>
+                            <li>Ajouter les pruneaux et les amandes 10 minutes avant la fin.</li>
+                            <li>Servir chaud avec du pain complet (Khobz).</li>
+                        </ol>
+                        <p><strong>Note :</strong> Ce plat est dense en calories et parfait pour un repas post-entraînement.</p>`
+                    )">
+                        <div class="recipe-header"><h3>Tajine Poulet Massif</h3><span class="recipe-badge">POWER</span></div>
+                        <p style="color: #ccc; margin-bottom: 15px;">Plat Principal - Servi avec pain complet.</p>
+                        <div class="recipe-macros">
+                            <div class="macro-item"><div class="macro-value">720</div><div class="macro-label">Calories</div></div>
+                            <div class="macro-item"><div class="macro-value">55g</div><div class="macro-label">Protéines</div></div>
+                            <div class="macro-item"><div class="macro-value">65g</div><div class="macro-label">Glucides</div></div>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-card" onclick="showInfoModal(
+                        'Couscous Protéiné XXL', 
+                        '🥘', 
+                        'linear-gradient(135deg, #2a2f4a, #1a1f35)', 
+                        `<h3>Ingrédients Clés :</h3>
+                        <ul>
+                            <li>150g de semoule complète</li>
+                            <li>200g blanc de poulet</li>
+                            <li>150g de pois chiches (cuits)</li>
+                            <li>Légumes (Carottes, Courgettes, Navets)</li>
+                            <li>Bouillon de légumes</li>
+                            <li>Épices à couscous</li>
+                        </ul>
+                        <h3>Préparation :</h3>
+                        <ol>
+                            <li>Préparer la semoule complète à la vapeur (ou selon les instructions).</li>
+                            <li>Cuire le poulet et les légumes dans le bouillon épicé.</li>
+                            <li>Ajouter les pois chiches en fin de cuisson.</li>
+                            <li>Servir la semoule dans une grande assiette, ajouter le poulet, les légumes et le bouillon.</li>
+                            <li>Ajouter un filet d'huile d'olive pour de bonnes graisses.</li>
+                        </ol>
+                        <p><strong>Note :</strong> La double portion de pois chiches et de poulet en fait un repas de bulking idéal.</p>`
+                    )">
+                        <div class="recipe-header"><h3>Couscous Protéiné XXL</h3><span class="recipe-badge">POWER</span></div>
+                        <p style="color: #ccc; margin-bottom: 15px;">Plat Principal - Double portion de poulet et pois chiches.</p>
+                        <div class="recipe-macros">
+                            <div class="macro-item"><div class="macro-value">850</div><div class="macro-label">Calories</div></div>
+                            <div class="macro-item"><div class="macro-value">48g</div><div class="macro-label">Protéines</div></div>
+                            <div class="macro-item"><div class="macro-value">110g</div><div class="macro-label">Glucides</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-box">
+                <h2>💊 Suppléments Recommandés</h2>
+                <p style="color: #ccc; margin-bottom: 20px;">Compléments pour maximiser vos résultats (optionnel).</p>
+                <div class="supplement-grid">
+                    
+                    <div class="supplement-card" onclick="showInfoModal(
+                        'Whey Protéine', 
+                        '🥤', 
+                        'linear-gradient(135deg, #2a2f4a, #1a1f35)', 
+                        `<h3>Pourquoi la Whey ?</h3>
+                        <p>La Whey (protéine de lactosérum) est une protéine à digestion rapide. C'est le supplément idéal après l'entraînement (post-workout) pour initier la récupération et la synthèse des protéines musculaires.</p>
+                        <h3>Utilisation Marocaine (Bulking) :</h3>
+                        <p>Pour augmenter les calories, ne la buvez pas seulement avec de l'eau :</p>
+                        <ul>
+                            <li><strong>Smoothie :</strong> Mixez 1 scoop de Whey avec 500ml de Lait Entier, 1 Banane, 3 Dattes et une poignée d'amandes.</li>
+                            <li><strong>Avec Amlou :</strong> Ajoutez 1 scoop dans votre smoothie avec une cuillère d'Amlou.</li>
+                            <li><strong>Petit-déj :</strong> Mélangez 1 scoop à votre avoine (Shoufane).</li>
+                        </ul>
+                        <p><strong>Dose recommandée :</strong> 30g (1 scoop) 1 à 2 fois par jour, principalement après l'entraînement.</p>`
+                    )">
+                        <div class="icon">🥤</div><h4>Whey Protéine</h4><div class="dose">30g post-training</div><p>Absorption rapide pour nourrir les muscles. Peut être mixée avec du lait et des dattes.</p>
+                    </div>
+
+                    <div class="supplement-card" onclick="showInfoModal(
+                        'Créatine', 
+                        '⚡', 
+                        'linear-gradient(135deg, #2a2f4a, #1a1f35)', 
+                        `<h3>Le Roi des Suppléments</h3>
+                        <p>La Créatine Monohydrate est le supplément le plus étudié et le plus efficace pour l'augmentation de la force, de la puissance et de la masse musculaire. Elle aide vos muscles à produire plus d'énergie (ATP) durant les efforts intenses.</p>
+                        <h3>Comment l'utiliser ?</h3>
+                        <ul>
+                            <li><strong>Dosage :</strong> 5 grammes par jour.</li>
+                            <li><strong>Quand :</strong> N'importe quand. Beaucoup la prennent post-training avec leur shake de Whey, mais le plus important est la constance (en prendre 5g <em>chaque</em> jour).</li>
+                            <li><strong>Phase de charge ?</strong> Optionnelle. Vous pouvez commencer directement par 5g/jour. Les effets se feront sentir après 2-3 semaines.</li>
+                        </ul>
+                        <p><strong>Note :</strong> Assurez-vous de boire beaucoup d'eau (au moins 2-3L par jour) lorsque vous prenez de la créatine, car elle attire l'eau dans les cellules musculaires.</p>`
+                    )">
+                        <div class="icon">⚡</div><h4>Créatine</h4><div class="dose">5g par jour</div><p>Augmente la force et la masse musculaire. La supplémentation optimise les résultats.</p>
+                    </div>
+
+                    <div class="supplement-card" onclick="showInfoModal(
+                        'BCAA', 
+                        '🌟', 
+                        'linear-gradient(135deg, #2a2f4a, #1a1f35)', 
+                        `<h3>Que sont les BCAA ?</h3>
+                        <p>Les BCAA (Acides Aminés à Chaîne Ramifiée) sont trois acides aminés essentiels : Leucine, Isoleucine et Valine. Ils jouent un rôle clé dans la synthèse des protéines et peuvent aider à réduire la fatigue musculaire.</p>
+                        <h3>Sont-ils nécessaires ?</h3>
+                        <p>Si vous consommez suffisamment de protéines (via l'alimentation et la Whey), vous obtenez probablement déjà assez de BCAA. La Whey en est naturellement riche.</p>
+                        <ul>
+                            <li><strong>Intérêt principal :</strong> Réduire la dégradation musculaire (catabolisme) si vous vous entraînez à jeun (le matin avant le petit-déjeuner).</li>
+                            <li><strong>Alternative :</strong> Manger un repas riche en protéines 1 à 2 heures avant l'entraînement.</li>
+                        </ul>
+                        <p><strong>Dose :</strong> 10g pendant l'entraînement si vous êtes à jeun.</p>`
+                    )">
+                        <div class="icon">🌟</div><h4>BCAA</h4><div class="dose">10g pendant training</div><p>Réduit le catabolisme musculaire. Utile si vous vous entraînez à jeun.</p>
+                    </div>
+
+                    <div class="supplement-card" onclick="showInfoModal(
+                        'Vitamine D', 
+                        '☀️', 
+                        'linear-gradient(135deg, #2a2f4a, #1a1f35)', 
+                        `<h3>La Vitamine du Soleil</h3>
+                        <p>La Vitamine D n'est pas vraiment une vitamine, mais une pro-hormone. Elle est cruciale pour la santé osseuse, le système immunitaire et la production hormonale (y compris la testostérone).</p>
+                        <h3>Pourquoi se supplémenter ?</h3>
+                        <p>Même dans un pays ensoleillé comme le Maroc, beaucoup de personnes sont en carence, surtout si elles travaillent dans un bureau ou évitent le soleil direct.</p>
+                        <ul>
+                            <li><strong>Rôle dans le Bulking :</strong> Un taux optimal de Vitamine D est lié à une meilleure production de testostérone, ce qui est fondamental pour la prise de muscle.</li>
+                            <li><strong>Santé générale :</strong> Elle est essentielle pour le bien-être général et l'énergie.</li>
+                        </ul>
+                        <p><strong>Dose :</strong> 2000 UI (Unités Internationales) par jour est une dose de maintenance standard. Il est recommandé de faire une prise de sang pour vérifier votre taux.</p>`
+                    )">
+                        <div class="icon">☀️</div><h4>Vitamine D</h4><div class="dose">2000 UI par jour</div><p>Essentielle pour la production de testostérone. Importante au Maroc.</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="content-box">
+                <h2>📈 9 Conseils pour le Bulking Marocain</h2>
+                <ol>
+                    <li><strong>Mangez Fréquemment :</strong> Visez 5 à 6 repas/collations par jour.</li>
+                    <li><strong>Priorisez les Protéines :</strong> Khlii, oeufs, sardines, et poulet fermier.</li>
+                    <li><strong>N'ayez pas peur des Glucides :</strong> Couscous, pain complet (Khobz) et batata hlouwa.</li>
+                    <li><strong>Utilisez les "Super-aliments" :</strong> Amlou et Sellou (version "hackée").</li>
+                    <li><strong>Hydratez-vous Intensément :</strong> Visez 2-3L par jour.</li>
+                    <li><strong>Mangez Post-Entraînement :</strong> Un tagine poulet-pommes de terre.</li>
+                    <li><strong>Ne négligez pas les bonnes graisses :</strong> Huile d'olive, huile d'argan, et avocats.</li>
+                    <li><strong>Le "Smoothie Atlas" :</strong> Avocat, 3 dattes, 500ml de lait, amandes.</li>
+                    <li><strong>Soyez Patient et Constant :</strong> Visez 0.5kg par semaine maximum.</li>
+                </ol>
+            </div>
+            <div class="content-box">
+                <h2>🍽️ Plan Alimentaire Journalier (Exemple 3000+ kcal)</h2>
+                <ul class="meal-plan-list">
+                    <li><strong>Petit-déjeuner :</strong> Omelette au Khlii (3 oeufs + 30g Khlii) + Pain complet (Khobz).</li>
+                    <li><strong>Collation Matin :</strong> "Smoothie Atlas" (Avocat, Lait entier, Dattes, Amandes).</li>
+                    <li><strong>Déjeuner :</strong> Tagine de bœuf aux pruneaux (portion généreuse) + Pain.</li>
+                    <li><strong>Collation (Pré-workout) :</strong> 1 Banane + 1 cuillère à soupe d'Amlou.</li>
+                    <li><strong>Dîner (Post-workout) :</strong> Couscous au poulet (grande portion) + Lben.</li>
+                    <li><strong>Coucher :</strong> Un bol de Raib avec une cuillère de Sellou modifié.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="faq" class="page">
+        <div class="page-header" style="background: linear-gradient(135deg, #6a5acd, #8a2be2);">
+            <h1>Foire Aux Questions (FAQ)</h1>
+            <p>Vos questions les plus fréquentes sur la nutrition marocaine.</p>
+        </div>
+        <div class="main-content">
+            <div class="faq-container">
+                <details><summary>Q : Le pain (Khobz) est-il l'ennemi ?</summary><p class="faq-answer">R : Non, mais le type et la quantité comptent. Nous préconisons le Khobz cha3ir (pain d'orge) ou complet, pesé et intégré dans le total calorique journalier.</p></details>
+                <details><summary>Q : L'huile d'olive est-elle "gratuite" car saine ?</summary><p class="faq-answer">R : C'est l'erreur la plus commune. Bien que riche en bons acides gras, l'huile d'olive contient 900 kcal/100g. L'usage d'un spray ou d'une cuillère de mesure est impératif.</p></details>
+                <details><summary>Q : Comment gérer le thé à la menthe (Atay) ?</summary><p class="faq-answer">R : Le problème est la "tour de sucre". Nous proposons des protocoles de désensibilisation au sucre ou l'usage d'édulcorants naturels comme la stevia.</p></details>
+                <details><summary>Q : Puis-je vraiment perdre du poids en mangeant du Tagine ?</summary><p class="faq-answer">R : Absolument. Le secret est de contrôler la quantité d'huile, de privilégier les viandes maigres (poulet, poisson) et de ne pas finir la sauce avec le pain !</p></details>
+                <details><summary>Q : Le Khlii est-il bon pour la musculation ?</summary><p class="faq-answer">R : Oui et non. C'est une excellente source de protéines et de graisses. Pour une prise de masse (bulking), c'est parfait. Pour une sèche, il faut le consommer avec modération.</p></details>
+                <details><summary>Q : Les "bonnes graisses" (Amlou) font-elles grossir ?</summary><p class="faq-answer">R : Amlou est excellent pour la santé mais "hypercalorique". C'est un outil formidable pour le bulking, mais il faut le mesurer précisément si vous êtes en sèche.</p></details>
+            </div>
+        </div>
+    </div>
+
+    <div id="suggestions" class="page">
+        <div class="page-header" style="background: linear-gradient(135deg, #6a5acd, #8a2be2);">
+            <h1>Suggestions de Repas</h1>
+            <p>Découvrez nos plats marocains adaptés à vos objectifs nutritionnels</p>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterMeals('tous', this)">Tous les plats</button>
+            <button class="filter-btn" onclick="filterMeals('petit-dejeuner', this)">Petit-déjeuner</button>
+            <button class="filter-btn" onclick="filterMeals('déjeuner', this)">Déjeuner</button>
+            <button class="filter-btn" onclick="filterMeals('diner', this)">Dîner</button>
+        </div>
+
+        <div id="mealsContainer" class="meals-grid"></div>
+
+        <!-- <div class="meals-grid">
+            <div class="meal-card" data-category="petit-dejeuner" onclick="showInfoModal(
+                'Bissara Protéinée', 
+                '🥣', 
+                'linear-gradient(135deg, #8d6e63, #6d4c41)',
+                `<h3>Ingrédients :</h3><ul><li>500g de fèves séchées (pelées)</li><li>2 gousses d\'ail</li><li>1 cuillère à café de cumin</li><li>1 cuillère à café de paprika</li><li>Sel et poivre</li><li>Huile d\'olive</li><li>(Optionnel : 1 scoop de protéine de pois nature)</li></ul>
+                <h3>Préparation :</h3><ol><li>Faire tremper les fèves la veille.</li><li>Cuire les fèves avec l\'ail dans un grand volume d\'eau jusqu\'à ce qu\'elles soient tendres.</li><li>Égoutter (en gardant un peu d\'eau de cuisson) et mixer pour obtenir une soupe.</li><li>Remettre sur le feu, ajouter les épices.</li><li>Si vous utilisez de la protéine, délayez-la dans un peu d\'eau froide avant de l\'incorporer hors du feu.</li><li>Servir chaud avec un filet d\'huile d\'olive et du cumin.</li></ol>`
+            )">
+                <div class="meal-image" style="background: linear-gradient(135deg, #8d6e63, #6d4c41);">🥣<span class="meal-badge">250 kcal</span></div>
+                <div class="meal-content">
+                    <h3 class="meal-title">Bissara Protéinée</h3>
+                    <p>Soupe de fèves traditionnelle enrichie en protéines.</p>
+                    <div class="meal-info">
+                        <div class="info-item"><span class="info-value">18g</span><span class="info-label">Protéines</span></div>
+                        <div class="info-item"><span class="info-value">32g</span><span class="info-label">Glucides</span></div>
+                        <div class="info-item"><span class="info-value">6g</span><span class="info-label">Lipides</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="meal-card" data-category="dejeuner" onclick="showInfoModal(
+                'Couscous Complet', 
+                '🥘', 
+                'linear-gradient(135deg, #ffa726, #f57c00)',
+                `<h3>Ingrédients :</h3><ul><li>150g de semoule de couscous complet</li><li>200g de pois chiches cuits</li><li>1 courgette, 1 carotte, 1 navet</li><li>1 oignon</li><li>1 cuillère à café de curcuma</li><li>1 cuillère à café de gingembre</li><li>Option : 150g de blanc de poulet</li></ul>
+                <h3>Préparation :</h3><ol><li>Couper les légumes en gros morceaux.</li><li>Dans une marmite, faire revenir l\'oignon, ajouter les épices, les légumes (et le poulet si utilisé). Couvrir d\'eau et laisser mijoter.</li><li>Ajouter les pois chiches à mi-cuisson.</li><li>Préparer la semoule de couscous complet selon les instructions sur le paquet.</li><li>Servir la semoule dans une assiette, ajouter les légumes, le poulet et le bouillon.</li></ol>`
+            )">
+                <div class="meal-image" style="background: linear-gradient(135deg, #ffa726, #f57c00);">🥘<span class="meal-badge">450 kcal</span></div>
+                <div class="meal-content">
+                    <h3 class="meal-title">Couscous Complet</h3>
+                    <p>Semoule complète et légumes de saison.</p>
+                    <div class="meal-info">
+                        <div class="info-item"><span class="info-value">22g</span><span class="info-label">Protéines</span></div>
+                        <div class="info-item"><span class="info-value">68g</span><span class="info-label">Glucides</span></div>
+                        <div class="info-item"><span class="info-value">8g</span><span class="info-label">Lipides</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="meal-card" data-category="dejeuner" onclick="showInfoModal(
+                'Tagine de Poulet', 
+                '🍲', 
+                'linear-gradient(135deg, #ef5350, #c62828)',
+                `<h3>Ingrédients :</h3><ul><li>200g de blanc de poulet</li><li>1 oignon émincé</li><li>1 gousse d\'ail</li><li>5-6 pruneaux dénoyautés</li><li>Une poignée d\'amandes effilées (grillées)</li><li>Épices : Gingembre, Curcuma, Cannelle, Ras el hanout</li><li>1 cuillère à soupe d\'huile d\'olive</li></ul>
+                <h3>Préparation :</h3><ol><li>Faire chauffer l\'huile dans un tagine ou une cocotte. Faire dorer le poulet.</li><li>Ajouter l\'oignon et l\'ail, laisser suer.</li><li>Ajouter les épices et un petit verre d\'eau. Couvrir et laisser mijoter 20 minutes.</li><li>Ajouter les pruneaux et laisser confire 10 minutes de plus.</li><li>Au moment de servir, parsemer d\'amandes grillées.</li></ol>`
+            )">
+                <div class="meal-image" style="background: linear-gradient(135deg, #ef5350, #c62828);">🍲<span class="meal-badge">580 kcal</span></div>
+                <div class="meal-content">
+                    <h3 class="meal-title">Tagine de Poulet</h3>
+                    <p>Poulet fermier, pruneaux et amandes grillées.</p>
+                    <div class="meal-info">
+                        <div class="info-item"><span class="info-value">42g</span><span class="info-label">Protéines</span></div>
+                        <div class="info-item"><span class="info-value">45g</span><span class="info-label">Glucides</span></div>
+                        <div class="info-item"><span class="info-value">22g</span><span class="info-label">Lipides</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="meal-card" data-category="diner" onclick="showInfoModal(
+                'Harira Légère', 
+                '🥣', 
+                'linear-gradient(135deg, #66bb6a, #388e3c)',
+                `<h3>Ingrédients :</h3><ul><li>100g de lentilles</li><li>100g de pois chiches cuits</li><li>1 boîte de tomates concassées</li><li>1 oignon, 2 branches de céleri</li><li>Coriandre et persil frais hachés</li><li>1 cuillère à café de curcuma, 1 de gingembre</li><li>(Optionnel : 100g de viande hachée maigre)</li></ul>
+                <h3>Préparation :</h3><ol><li>Faire revenir l\'oignon et le céleri hachés.</li><li>Ajouter les tomates, les épices et les lentilles (et la viande si utilisée). Couvrir d\'eau et cuire 25 minutes.</li><li>Ajouter les pois chiches et laisser mijoter encore 10 minutes.</li><li>Ne pas ajouter de farine (Tadwira) pour garder la recette légère.</li><li>Ajouter la coriandre et le persil frais juste avant de servir.</li></ol>`
+            )">
+                <div class="meal-image" style="background: linear-gradient(135deg, #66bb6a, #388e3c);">🥣<span class="meal-badge">320 kcal</span></div>
+                <div class="meal-content">
+                    <h3 class="meal-title">Harira Légère</h3>
+                    <p>Soupe traditionnelle aux lentilles et pois chiches.</p>
+                    <div class="meal-info">
+                        <div class="info-item"><span class="info-value">16g</span><span class="info-label">Protéines</span></div>
+                        <div class="info-item"><span class="info-value">48g</span><span class="info-label">Glucides</span></div>
+                        <div class="info-item"><span class="info-value">5g</span><span class="info-label">Lipides</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="meal-card" data-category="petit-dejeuner" onclick="showInfoModal(
+                'Baghrir Protéiné', 
+                '🥞', 
+                'linear-gradient(135deg, #fbc02d, #f9a825)',
+                `<h3>Ingrédients :</h3>
+                <ul>
+                    <li>100g de semoule fine</li>
+                    <li>50g de farine complète</li>
+                    <li>1 scoop de Whey Protéine (vanille ou nature)</li>
+                    <li>1 oeuf</li>
+                    <li>1 cuillère à café de levure boulangère</li>
+                    <li>1 sachet de levure chimique</li>
+                    <li>300ml d'eau tiède</li>
+                    <li>1 pincée de sel</li>
+                </ul>
+                <h3>Préparation :</h3>
+                <ol>
+                    <li>Dans un blender, mélanger l'eau tiède, la semoule, la farine, l'oeuf, le sel et la levure boulangère.</li>
+                    <li>Mixer pendant 5 minutes. Ajouter la levure chimique et la Whey, et mixer 30 secondes de plus.</li>
+                    <li>Laisser reposer la pâte 20 minutes.</li>
+                    <li>Chauffer une poêle antiadhésive. Verser une louche de pâte.</li>
+                    <li>Cuire d'un seul côté jusqu'à ce que tous les trous se forment et que la surface soit sèche.</li>
+                    <li>Servir avec du miel (mesuré) ou Amlou.</li>
+                </ol>`
+            )">
+                <div class="meal-image" style="background: linear-gradient(135deg, #fbc02d, #f9a825);">🥞<span class="meal-badge">380 kcal</span></div>
+                <div class="meal-content">
+                    <h3 class="meal-title">Baghrir Protéiné</h3>
+                    <p>Le classique "mille trous", optimisé pour vos gains.</p>
+                    <div class="meal-info">
+                        <div class="info-item"><span class="info-value">25g</span><span class="info-label">Protéines</span></div>
+                        <div class="info-item"><span class="info-value">55g</span><span class="info-label">Glucides</span></div>
+                        <div class="info-item"><span class="info-value">6g</span><span class="info-label">Lipides</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="meal-card" data-category="diner" onclick="showInfoModal(
+                'Brochettes de Sardines', 
+                '🐟', 
+                'linear-gradient(135deg, #42a5f5, #1e88e5)',
+                `<h3>Ingrédients :</h3>
+                <ul>
+                    <li>250g de filets de sardines fraîches</li>
+                    <li>1 poivron rouge, 1 poivron vert</li>
+                    <li>1 oignon rouge</li>
+                    <li>Pour la marinade (Chermoula légère) :</li>
+                    <li>1 gousse d'ail, coriandre et persil hachés</li>
+                    <li>1 cuillère à café de cumin, 1 de paprika</li>
+                    <li>Jus d'un demi-citron</li>
+                    <li>1 cuillère à soupe d'huile d'olive</li>
+                </ul>
+                <h3>Préparation :</h3>
+                <ol>
+                    <li>Préparer la chermoula en mélangeant ail, herbes, épices, jus de citron et huile d'olive.</li>
+                    <li>Nettoyer les sardines et les enrober de marinade. Laisser reposer 30 minutes.</li>
+                    <li>Couper les poivrons et l'oignon en gros carrés.</li>
+                    <li>Sur des piques à brochettes, alterner sardines (enroulées) et légumes.</li>
+                    <li>Cuire au grill, à la plancha ou au four (10-12 minutes) en retournant à mi-cuisson.</li>
+                    <li>Servir avec une salade marocaine.</li>
+                </ol>`
+            )">
+                <div class="meal-image" style="background: linear-gradient(135deg, #42a5f5, #1e88e5);">🐟<span class="meal-badge">410 kcal</span></div>
+                <div class="meal-content">
+                    <h3 class="meal-title">Brochettes de Sardines</h3>
+                    <p>Riches en Oméga-3 et protéines, parfaites pour le soir.</p>
+                    <div class="meal-info">
+                        <div class="info-item"><span class="info-value">35g</span><span class="info-label">Protéines</span></div>
+                        <div class="info-item"><span class="info-value">10g</span><span class="info-label">Glucides</span></div>
+                        <div class="info-item"><span class="info-value">26g</span><span class="info-label">Lipides</span></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div> -->
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>À propos de Sahti</h3>
+                <p>Votre partenaire pour une alimentation marocaine saine et équilibrée. Nous croyons qu'il est possible de manger sainement sans renoncer aux traditions.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens Rapides</h3>
+                <a onclick="showPage('accueil', document.querySelector('nav a[onclick*=\'accueil\']'))">Accueil</a>
+                <a onclick="showPage('apropos', document.querySelector('nav a[onclick*=\'apropos\']'))">À propos</a>
+                <a onclick="showPage('bulking', document.querySelector('nav a[onclick*=\'bulking\']'))">Bulking</a>
+                <a onclick="showPage('faq', document.querySelector('nav a[onclick*=\'faq\']'))">FAQ</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact (Informations de l'entreprise)</h3>
+                <p>📧 contact@sahti.ma</p>
+                <p>📱 +212 6 28 45 20 70</p>
+                <p>📍 Agdal, Rabat, Maroc</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Sahti - Alimentation Marocaine Santé. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <div id="info-modal" class="modal-overlay" onclick="closeInfoModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="modal-close" onclick="closeInfoModal()">&times;</span>
+            <div class="modal-header">
+                <div id="modal-image"></div>
+                <h2 id="modal-title">Titre</h2>
+            </div>
+            <div id="modal-body-content" class="modal-body-content">
+                </div>
+        </div>
+    </div>
+
+    
+
+    <script>
+        var repas = {
+    "repas": [
+        // --- Repas originaux ---
+        {
+            "titre": "Bissara Protéinée",
+            "categorie": "petit-déjeuner",
+            "description": "Soupe de fèves traditionnelle enrichie en protéines.",
+            "kcal": 250,
+            "proteines": "18g",
+            "glucides": "32g",
+            "lipides": "6g",
+            "emoji": "../image/bissara.webp",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Couscous Complet",
+            "categorie": "déjeuner",
+            "description": "Semoule complète et légumes de saison.",
+            "kcal": 450,
+            "proteines": "22g",
+            "glucides": "68g",
+            "lipides": "8g",
+            "emoji": "../image/couscous.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Tagine de Poulet",
+            "categorie": "déjeuner",
+            "description": "Poulet fermier, pruneaux et amandes grillées.",
+            "kcal": 580,
+            "proteines": "42g",
+            "glucides": "45g",
+            "lipides": "22g",
+            "emoji": "../image/tajineoulet.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Harira Légère",
+            "categorie": "dîner",
+            "description": "Soupe traditionnelle aux lentilles et pois chiches.",
+            "kcal": 320,
+            "proteines": "16g",
+            "glucides": "48g",
+            "lipides": "5g",
+            "emoji": "../image/herira.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Baghrir Protéiné",
+            "categorie": "petit-dejeuner",
+            "description": "Le classique 'mille trous', optimisé pour les protéines.",
+            "kcal": 380,
+            "proteines": "25g",
+            "glucides": "55g",
+            "lipides": "6g",
+            "emoji": "../image/baghrir.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Brochettes de Sardines",
+            "categorie": "diner",
+            "description": "Riches en Oméga-3 et protéines, parfaites pour le soir.",
+            "kcal": 410,
+            "proteines": "35g",
+            "glucides": "10g",
+            "lipides": "26g",
+            "emoji": "../image/sardin.jpg",
+            "color": "#FFD8A8"
+        },
+        
+        // --- Nouveaux repas mis à jour ---
+        {
+            "titre": "Rfissa",
+            "categorie": "déjeuner",
+            "description": "poulet + msemen effilés + lentilles",
+            "kcal": 385,
+            "proteines": "34g",
+            "glucides": "19g",
+            "lipides": "18g",
+            "emoji": "../image/rfissa.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Pastilla au poulet",
+            "categorie": "déjeuner",
+            "description": "(ou au poisson)",
+            "kcal": 430,
+            "proteines": "24g",
+            "glucides": "28g",
+            "lipides": "24g",
+            "emoji": "../image/pastillahout.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Tanjia marrakchia",
+            "categorie": "déjeuner",
+            "description": "Plat de viande marrakchi cuit à l'étouffée.",
+            "kcal": 650,
+            "proteines": "40g",
+            "glucides": "2g",
+            "lipides": "50g",
+            "emoji": "../image/tanjia.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Tajine de kefta aux œufs",
+            "categorie": "déjeuner",
+            "description": "Boulettes de viande en sauce tomate et œufs.",
+            "kcal": 509,
+            "proteines": "42g",
+            "glucides": "2g",
+            "lipides": "36g",
+            "emoji": "../image/tajine de kfta au oeuifs.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Tajine de viande aux pruneaux",
+            "categorie": "déjeuner",
+            "description": "Mijoté sucré-salé de viande, pruneaux et amandes.",
+            "kcal": 600,
+            "proteines": "35g",
+            "glucides": "50g",
+            "lipides": "25g",
+            "emoji": "../image/tajine au preneaux.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Loubia",
+            "categorie": "déjeuner",
+            "description": "haricots blancs en sauce",
+            "kcal": 384,
+            "proteines": "32g",
+            "glucides": "41g",
+            "lipides": "6g",
+            "emoji": "../image/loubia.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Rziza",
+            "categorie": "petit-déjeuner",
+            "description": "pâtes marocaines maison",
+            "kcal": 450,
+            "proteines": "8g",
+            "glucides": "60g",
+            "lipides": "20g",
+            "emoji": "../image/rziza.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Seffa medfouna",
+            "categorie": "dîner",
+            "description": "vermicelles ou semoule sucrée-salée",
+            "kcal": 600,
+            "proteines": "30g",
+            "glucides": "80g",
+            "lipides": "18g",
+            "emoji": "../image/sefa.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Mssemen farci",
+            "categorie": "dîner",
+            "description": "viande hachée, oignons, poivrons…",
+            "kcal": 450,
+            "proteines": "15g",
+            "glucides": "40g",
+            "lipides": "25g",
+            "emoji": "../image/msmn.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Khobz belboula",
+            "categorie": "petit-déjeuner",
+            "description": "pain d’orge cuit au four (pour 100g)",
+            "kcal": 350,
+            "proteines": "11g",
+            "glucides": "74g",
+            "lipides": "2g",
+            "emoji": "../image/khbz belboula.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Mrouzia",
+            "categorie": "déjeuner",
+            "description": "plat spécial de l’Aïd, viande sucrée aux raisins secs",
+            "kcal": 632,
+            "proteines": "62g",
+            "glucides": "2g",
+            "lipides": "41g",
+            "emoji": "../image/merouzia.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Hout belhamd",
+            "categorie": "dîner",
+            "description": "poisson au citron",
+            "kcal": 500,
+            "proteines": "48g",
+            "glucides": "10g",
+            "lipides": "30g",
+            "emoji": "../image/hout.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Couscous belhout",
+            "categorie": "déjeuner",
+            "description": "couscous au poisson",
+            "kcal": 450,
+            "proteines": "25g",
+            "glucides": "68g",
+            "lipides": "6g",
+            "emoji": "../image/couscous poisson.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Maakouda",
+            "categorie": "dîner",
+            "description": "galettes de pommes de terre (portion de 2-3)",
+            "kcal": 350,
+            "proteines": "8g",
+            "glucides": "40g",
+            "lipides": "18g",
+            "emoji": "../image/ma39oda.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Rziza belfermaj",
+            "categorie": "petit-déjeuner",
+            "description": "version moderne au fromage",
+            "kcal": 550,
+            "proteines": "12g",
+            "glucides": "62g",
+            "lipides": "28g",
+            "emoji": "../image/rzziza frmage.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Chakchouka marocaine",
+            "categorie": "dîner",
+            "description": "œufs + tomates + poivrons",
+            "kcal": 402,
+            "proteines": "17g",
+            "glucides": "51g",
+            "lipides": "12g",
+            "emoji": "../image/taktouka.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Zaalouk",
+            "categorie": "dîner",
+            "description": "salade chaude d’aubergines",
+            "kcal": 120,
+            "proteines": "2g",
+            "glucides": "15g",
+            "lipides": "7g",
+            "emoji": "../image/zaalouk.jpg",
+            "color": "#FFD8A8"
+        },
+        {
+            "titre": "Khlii bel beid",
+            "categorie": "petit-déjeuner",
+            "description": "œufs au khlii (avec 2 œufs)",
+            "kcal": 480,
+            "proteines": "27g",
+            "glucides": "1g",
+            "lipides": "40g",
+            "emoji": "../image/bid khli3.jpg",
+            "color": "#FFD8A8"
+        }
+    ]
+};
+var recettes = {
+
+    // --- Recettes originales ---
+
+    "Bissara Protéinée": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>500g de fèves séchées (pelées)</li>
+            <li>2 gousses d'ail</li>
+            <li>1 cuillère à café de cumin</li>
+            <li>1 cuillère à café de paprika</li>
+            <li>Sel et poivre</li>
+            <li>Huile d'olive</li>
+            <li>(Optionnel : 1 scoop de protéine de pois nature)</li>
+        </ul>
+
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Faire tremper les fèves la veille.</li>
+            <li>Cuire les fèves avec l'ail jusqu'à ce qu'elles soient tendres.</li>
+            <li>Mixer et remettre sur le feu.</li>
+            <li>Ajouter les épices.</li>
+            <li>Incorporer la protéine hors du feu si utilisée.</li>
+            <li>Servir avec un filet d'huile d'olive.</li>
+        </ol>
+    `,
+
+    "Couscous Complet": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>150g de semoule complète</li>
+            <li>200g de pois chiches cuits</li>
+            <li>Légumes : courgette, carotte, navet</li>
+            <li>Oignon</li>
+            <li>Épices : curcuma, gingembre</li>
+            <li>Option : 150g de poulet</li>
+        </ul>
+
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Faire revenir l'oignon et les épices.</li>
+            <li>Ajouter les légumes (et le poulet).</li>
+            <li>Ajouter les pois chiches à mi-cuisson.</li>
+            <li>Préparer la semoule à part.</li>
+            <li>Servir chaud.</li>
+        </ol>
+    `,
+
+    "Tagine de Poulet": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>200g de poulet</li>
+            <li>Oignon, ail</li>
+            <li>Pruneaux</li>
+            <li>Amandes grillées</li>
+            <li>Épices marocaines</li>
+        </ul>
+
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Dorer le poulet dans l'huile.</li>
+            <li>Ajouter oignon et ail.</li>
+            <li>Ajouter épices + eau et mijoter.</li>
+            <li>Ajouter pruneaux pour confire.</li>
+            <li>Servir avec amandes grillées.</li>
+        </ol>
+    `,
+
+    "Harira Légère": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>Lentilles</li>
+            <li>Pois chiches</li>
+            <li>Tomates concassées</li>
+            <li>Oignon, céleri</li>
+            <li>Épices</li>
+        </ul>
+
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Faire revenir oignon + céleri.</li>
+            <li>Ajouter tomates + lentilles + épices.</li>
+            <li>Cuire 25 min.</li>
+            <li>Ajouter pois chiches.</li>
+            <li>Servir chaud.</li>
+        </ol>
+    `,
+
+    "Baghrir Protéiné": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>Semoule fine</li>
+            <li>Farine complète</li>
+            <li>Whey (protéine en poudre nature)</li>
+            <li>Oeuf</li>
+            <li>Levures (boulangère et chimique)</li>
+            <li>Eau tiède</li>
+        </ul>
+
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Mixer tous les ingrédients.</li>
+            <li>Laisser reposer 20 minutes.</li>
+            <li>Cuire sur une seule face dans une poêle antiadhésive.</li>
+            <li>Servir avec miel ou Amlou.</li>
+        </ol>
+    `,
+
+    "Brochettes de Sardines": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>Sardines fraîches (filets)</li>
+            <li>Poivrons, oignon</li>
+            <li>Chermoula (coriandre, persil, ail, cumin, paprika)</li>
+        </ul>
+
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Préparer la chermoula et mariner les sardines 30 min.</li>
+            <li>Couper les légumes en dés.</li>
+            <li>Monter les brochettes en alternant sardines et légumes.</li>
+            <li>Cuire au grill ou à la plancha.</li>
+        </ol>
+    `,
+
+    // --- Nouvelles recettes ajoutées ---
+
+    "Rfissa": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>1 poulet (ou morceaux)</li>
+            <li>500g de Msemen (ou Trid), coupés en lanières</li>
+            <li>2 grands oignons, émincés</li>
+            <li>1 tasse de lentilles</li>
+            <li>2 c. à soupe de fenugrec (Helba)</li>
+            <li>Épices : Ras el Hanout, curcuma, gingembre, safran</li>
+            <li>Smen (beurre ranci)</li>
+            <li>Huile d'olive, sel, poivre</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Faire dorer le poulet avec les oignons, l'huile et le Smen.</li>
+            <li>Ajouter les épices. Couvrir d'eau et laisser mijoter.</li>
+            <li>Cuire les lentilles et le fenugrec dans une partie du bouillon.</li>
+            <li>Chauffer le Msemen à la vapeur.</li>
+            <li>Dresser : Msemen, arroser de bouillon, ajouter poulet et lentilles.</li>
+        </ol>
+    `,
+
+    "Pastilla au poulet": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>10 feuilles de Pastilla (Warka)</li>
+            <li>500g de poulet</li>
+            <li>4 oignons</li>
+            <li>Persil et coriandre hachés</li>
+            <li>4 œufs</li>
+            <li>150g d'amandes (mondées, frites, concassées)</li>
+            <li>Sucre glace, Cannelle</li>
+            <li>Beurre fondu</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Cuire le poulet avec oignons et épices. L'émietter.</li>
+            <li>Réduire la sauce et y brouiller les œufs.</li>
+            <li>Mélanger les amandes concassées avec sucre et cannelle.</li>
+            <li>Monter la pastilla : alterner feuilles de Warka beurrées, poulet, œufs, et amandes.</li>
+            <li>Refermer, beurrer et enfourner jusqu'à dorure.</li>
+            <li>Décorer avec sucre glace et cannelle.</li>
+        </ol>
+    `,
+
+    "Tanjia marrakchia": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>1 kg de viande (jarret de veau ou épaule d'agneau)</li>
+            <li>1 citron confit</li>
+            <li>8 gousses d'ail</li>
+            <li>1 c. à soupe de cumin</li>
+            <li>Pistils de Safran</li>
+            <li>1 c. à soupe de Smen (beurre ranci)</li>
+            <li>Huile d'olive, un peu d'eau</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Mettre tous les ingrédients dans l'amphore (Tanjia).</li>
+            <li>Secouer pour mélanger.</li>
+            <li>Fermer hermétiquement.</li>
+            <li>Cuire 4-6 heures dans les cendres chaudes (ou 3-4h à four très doux).</li>
+        </ol>
+    `,
+
+    "Tajine de kefta aux œufs": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>500g de viande hachée (kefta)</li>
+            <li>1 oignon haché</li>
+            <li>Persil, coriandre</li>
+            <li>Épices pour kefta (cumin, paprika)</li>
+            <li>Sauce : 4 tomates mûres, ail, paprika, cumin</li>
+            <li>4 œufs</li>
+            <li>Huile d'olive</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Mélanger la kefta avec oignon, herbes et épices. Former des boulettes.</li>
+            <li>Préparer la sauce tomate dans le tajine.</li>
+            <li>Laisser mijoter la sauce 15 min.</li>
+            <li>Ajouter les boulettes de kefta et cuire 20 min.</li>
+            <li>Casser les œufs sur le tajine et couvrir jusqu'à cuisson.</li>
+        </ol>
+    `,
+
+    "Tajine de viande aux pruneaux": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>1 kg d'agneau ou de bœuf</li>
+            <li>2 oignons</li>
+            <li>Ail, gingembre, curcuma, safran</li>
+            <li>250g de pruneaux</li>
+            <li>Amandes grillées</li>
+            <li>Miel, cannelle</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Faire revenir la viande avec oignons et épices.</li>
+            <li>Couvrir d'eau et laisser mijoter 1h30.</li>
+            <li>À part, confire les pruneaux avec du miel, de la cannelle et un peu de bouillon.</li>
+            <li>Napper la viande de pruneaux et décorer d'amandes.</li>
+        </ol>
+    `,
+
+    "Loubia": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>500g de haricots blancs (trempés la veille)</li>
+            <li>2 tomates râpées</li>
+            <li>1 oignon haché</li>
+            <li>Ail, persil, coriandre</li>
+            <li>Paprika, cumin, gingembre</li>
+            <li>Concentré de tomate</li>
+            <li>Huile d'olive</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Mettre tous les ingrédients (sauf herbes) dans une cocotte-minute.</li>
+            <li>Couvrir d'eau.</li>
+            <li>Fermer et cuire 30-40 minutes après sifflement.</li>
+            <li>Ouvrir, ajouter les herbes hachées et laisser réduire si besoin.</li>
+        </ol>
+    `,
+
+    "Rziza": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>500g de farine de blé</li>
+            <li>250g de semoule extra-fine (finot)</li>
+            <li>Sel</li>
+            <li>Eau tiède</li>
+            <li>Mélange (beurre fondu + huile)</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Pétrir les farines, sel et eau pour obtenir une pâte lisse.</li>
+            <li>Former des boules et laisser reposer.</li>
+            <li>Passer la pâte à la machine à spaghetti pour obtenir des fils.</li>
+            <li>Enrouler les fils sur eux-mêmes, en arrosant de beurre/huile.</li>
+            <li>Aplatir légèrement et cuire dans une poêle des deux côtés.</li>
+        </ol>
+    `,
+
+    "Seffa medfouna": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>500g de vermicelle (Seffa)</li>
+            <li>1 poulet en morceaux</li>
+            <li>2 oignons</li>
+            <li>Épices (gingembre, curcuma, cannelle)</li>
+            <li>Raisins secs, beurre</li>
+            <li>Décor : Amandes frites, sucre glace, cannelle</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Cuire le vermicelle à la vapeur (plusieurs fois).</li>
+            <li>Cuire le poulet en sauce (daghmira) avec oignons et épices.</li>
+            <li>Désosser le poulet.</li>
+            <li>Incorporer raisins secs et beurre au vermicelle.</li>
+            <li>Dresser : une couche de Seffa, le poulet au centre, recouvrir de Seffa.</li>
+            <li>Décorer avec amandes, sucre et cannelle.</li>
+        </ol>
+    `,
+
+    "Mssemen farci": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>Pâte à Msemen (farine, semoule fine, sel, eau)</li>
+            <li>Farce : 300g viande hachée (kefta)</li>
+            <li>Oignons, poivrons</li>
+            <li>Épices (paprika, cumin), persil</li>
+            <li>Huile pour le façonnage</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Préparer la pâte à Msemen et la laisser reposer.</li>
+            <li>Faire revenir la farce (kefta, oignons, poivrons, épices). Laisser refroidir.</li>
+            <li>Étaler une boule de pâte très finement avec de l'huile.</li>
+            <li>Mettre de la farce au centre et plier en portefeuille (carré).</li>
+            <li>Cuire dans une poêle chaude.</li>
+        </ol>
+    `,
+
+    "Khobz belboula": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>500g de semoule d'orge (Belboula)</li>
+            <li>250g de farine de blé</li>
+            <li>Levure boulangère</li>
+            <li>Sel</li>
+            <li>Eau tiède</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Mélanger les semoules, farine, sel et levure.</li>
+            <li>Ajouter l'eau et pétrir longuement.</li>
+            <li>Laisser la pâte lever (doubler de volume).</li>
+            <li>Former des pains ronds.</li>
+            <li>Saupoudrer de semoule d'orge.</li>
+            <li>Cuire au four chaud jusqu'à dorure.</li>
+        </ol>
+    `,
+
+    "Mrouzia": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>1 kg d'agneau (collier, épaule)</li>
+            <li>Épice 'Mrouzia' ou Ras el Hanout</li>
+            <li>Ail, safran</li>
+            <li>150g de raisins secs</li>
+            <li>100g d'amandes</li>
+            <li>Miel, cannelle</li>
+            <li>Smen (beurre ranci)</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Mariner la viande avec Smen, ail et épices.</li>
+            <li>Faire revenir et cuire la viande à l'étouffée.</li>
+            <li>Quand la viande est cuite, ajouter miel, raisins et cannelle.</li>
+            <li>Laisser confire et caraméliser la sauce.</li>
+            <li>Servir chaud, décoré d'amandes frites.</li>
+        </ol>
+    `,
+
+    "Hout belhamd": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>1 grand poisson (Daurade, Loup...)</li>
+            <li>Chermoula (coriandre, persil, ail, cumin, paprika, citron)</li>
+            <li>Légumes : Pommes de terre, carottes, tomates, poivrons</li>
+            <li>Citron confit</li>
+            <li>Huile d'olive</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Préparer la chermoula. Mariner le poisson avec.</li>
+            <li>Dans un plat à tajine ou au four, disposer les légumes en rondelles.</li>
+            <li>Placer le poisson au centre.</li>
+            <li>Ajouter le reste de chermoula, citron confit et un filet d'huile.</li>
+            <li>Ajouter un peu d'eau et cuire 40-50 min.</li>
+        </ol>
+    `,
+
+    "Couscous belhout": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>Semoule de couscous</li>
+            <li>Filets de poisson (ex: Mérou, Congre)</li>
+            <li>Légumes (Carottes, courgettes, chou)</li>
+            <li>Bouillon de poisson</li>
+            <li>Chermoula</li>
+            <li>Raisins secs (Tfaya) - optionnel</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Préparer la semoule à la vapeur.</li>
+            <li>Préparer un bouillon avec les légumes et les épices.</li>
+            <li>Mariner le poisson avec la chermoula.</li>
+            <li>Pocher le poisson dans le bouillon 10 minutes avant la fin.</li>
+            <li>Servir la semoule, les légumes, et le poisson.</li>
+        </ol>
+    `,
+
+    "Maakouda": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>500g de pommes de terre</li>
+            <li>2 œufs</li>
+            <li>Ail, persil, coriandre hachés</li>
+            <li>Cumin, curcuma, sel, poivre</li>
+            <li>Farine (pour paner)</li>
+            <li>Huile de friture</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Cuire les pommes de terre, les écraser en purée.</li>
+            <li>Ajouter ail, herbes, épices et 1 œuf. Bien mélanger.</li>
+            <li>Laisser refroidir.</li>
+            <li>Former des galettes.</li>
+            <li>Passer dans la farine, puis dans l'œuf battu restant.</li>
+            <li>Frire dans l'huile chaude jusqu'à dorure.</li>
+        </ol>
+    `,
+
+    "Rziza belfermaj": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>Rziza (voir recette "Rziza")</li>
+            <li>Fromage (type Vache Qui Rit ou fromage frais)</li>
+            <li>Miel (optionnel)</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>C'est une méthode de service plutôt qu'une recette.</li>
+            <li>Chauffer la Rziza à la poêle ou à la vapeur.</li>
+            <li>L'effilocher pour séparer les "fils".</li>
+            <li>Incorporer généreusement des morceaux de fromage.</li>
+            <li>Laisser le fromage fondre légèrement avec la chaleur.</li>
+            <li>Servir chaud, éventuellement avec un filet de miel.</li>
+        </ol>
+    `,
+
+    "Chakchouka marocaine": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>4 tomates mûres</li>
+            <li>2 poivrons (vert et rouge)</li>
+            <li>1 oignon</li>
+            <li>2 gousses d'ail</li>
+            <li>Épices (paprika, cumin)</li>
+            <li>4 œufs</li>
+            <li>Huile d'olive</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Couper les légumes en dés.</li>
+            <li>Faire revenir oignon et ail dans l'huile d'olive.</li>
+            <li>Ajouter les poivrons, puis les tomates et les épices.</li>
+            <li>Laisser mijoter 20 minutes.</li>
+            <li>Casser les œufs sur la préparation.</li>
+            <li>Couvrir et laisser cuire jusqu'à ce que les œufs soient pris.</li>
+        </ol>
+    `,
+
+    "Zaalouk": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>2 grosses aubergines</li>
+            <li>4 tomates mûres</li>
+            <li>Ail, persil, coriandre</li>
+            <li>Paprika, cumin</li>
+            <li>Huile d'olive</li>
+            <li>Jus de citron (optionnel)</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Griller les aubergines (au four ou sur le feu), peler et écraser.</li>
+            <li>Dans une poêle, faire une sauce avec tomates râpées, ail, herbes, épices.</li>
+            <li>Ajouter la purée d'aubergine.</li>
+            <li>Laisser "sécher" et confire à feu doux en remuant.</li>
+            <li>Ajouter un filet d'huile d'olive et de citron avant de servir.</li>
+        </ol>
+    `,
+
+    "Khlii bel beid": `
+        <h3>Ingrédients :</h3>
+        <ul>
+            <li>100g de Khlii (viande séchée confite)</li>
+            <li>4 œufs</li>
+            <li>(Pas besoin d'huile, le Khlii a sa propre graisse)</li>
+        </ul>
+        <h3>Préparation :</h3>
+        <ol>
+            <li>Couper le Khlii en petits morceaux.</li>
+            <li>Le faire chauffer à feu doux dans une poêle.</li>
+            <li>Laisser la graisse fondre.</li>
+            <li>Casser les œufs directement sur le Khlii.</li>
+            <li>Mélanger (style œufs brouillés) ou laisser en omelette.</li>
+            <li>Servir immédiatement avec du pain chaud.</li>
+        </ol>
+    `
+};
+
+
+
+
+        function showPage(pageId, navElement) {
+            const pages = document.querySelectorAll('.page');
+            const navLinks = document.querySelectorAll('nav a');
+            pages.forEach(page => page.classList.remove('active'));
+            navLinks.forEach(link => link.classList.remove('active'));
+            const pageToShow = document.getElementById(pageId);
+            if (pageToShow) { pageToShow.classList.add('active'); }
+            if (navElement) { navElement.classList.add('active'); }
+            window.scrollTo(0, 0);
+        }
+
+        const users = {}; // Simulation de base de données utilisateur
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            if (!users[email]) {
+                users[email] = { email, password };
+                alert('✅ Compte créé et connexion réussie !');
+            } else if (users[email].password !== password) {
+                alert('❌ Mot de passe incorrect.');
+                return;
+            } else {
+                alert('✅ Connexion réussie !');
+            }
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('memberDashboard').style.display = 'block';
+            document.getElementById('userName').textContent = email.split('@')[0];
+        }
+
+        function handleLogout() {
+            if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) {
+                document.getElementById('loginSection').style.display = 'flex';
+                document.getElementById('memberDashboard').style.display = 'none';
+                document.getElementById('loginEmail').value = '';
+                document.getElementById('loginPassword').value = '';
+            }
+        }
+
+        let mealsData = []; 
+function displayMeals(category) {
+    const container = document.getElementById("mealsContainer");
+    container.innerHTML = ""; // vider l'affichage
+
+    const data = repas.repas; // 👈 on prend le tableau
+
+    const filtered = category === "tous"
+        ? data
+        : data.filter(meal => meal.categorie === category);
+
+    filtered.forEach(meal => {
+        container.innerHTML += `
+            <div class="meal-card" 
+                onclick="showInfoModal(
+                    '${meal.titre}',
+                    '${meal.emoji}',
+                    '${meal.color}',
+                    recettes[\`${meal.titre}\`]
+                )">
+                <div class="meal-image" style="background:${meal.color}">
+                    <img src="${meal.emoji}" alt="" style="width: 200px; height: 200px;">
+                    
+                    <span class="meal-badge">${meal.kcal} kcal</span>
+                </div>
+                <div class="meal-content">
+                    <h3 class="meal-title">${meal.titre}</h3>
+                    <p>${meal.description}</p>
+                    <div class="meal-info">
+                        <div class="info-item"><span class="info-value">${meal.proteines}</span><span class="info-label">Protéines</span></div>
+                        <div class="info-item"><span class="info-value">${meal.glucides}</span><span class="info-label">Glucides</span></div>
+                        <div class="info-item"><span class="info-value">${meal.lipides}</span><span class="info-label">Lipides</span></div>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+}
+
+// Fonction appelée par les boutons
+function filterMeals(category, buttonElement) {
+    const buttons = document.querySelectorAll('.filter-btn');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    if (buttonElement) {
+        buttonElement.classList.add('active');
+    }
+
+    displayMeals(category);
+}
+
+
+        
+
+        function handleBulkingCalc(event) {
+            event.preventDefault();
+            const age = parseInt(document.getElementById('calc-age').value);
+            const sexe = document.getElementById('calc-sexe').value;
+            const poids = parseFloat(document.getElementById('calc-poids').value);
+            const taille = parseFloat(document.getElementById('calc-taille').value);
+            const activite = parseFloat(document.getElementById('calc-activite').value);
+            if (isNaN(age) || isNaN(poids) || isNaN(taille)) {
+                alert("Veuillez remplir tous les champs avec des nombres valides.");
+                return;
+            }
+            let bmr;
+            if (sexe === 'homme') { bmr = (10 * poids) + (6.25 * taille) - (5 * age) + 5; }
+            else { bmr = (10 * poids) + (6.25 * taille) - (5 * age) - 161; }
+            const tdee = bmr * activite;
+            const bulkingGoal = tdee * 1.15;
+            const resultsDiv = document.getElementById('bulking-results');
+            document.getElementById('result-bmr').textContent = bmr.toFixed(0);
+            document.getElementById('result-tdee').textContent = tdee.toFixed(0);
+            document.getElementById('result-bulking').textContent = bulkingGoal.toFixed(0);
+            resultsDiv.style.display = 'block';
+        }
+
+        /* --- [MODIFIÉ] SCRIPT POUR LA MODALE (généralisé) --- */
+        const modal = document.getElementById('info-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalImage = document.getElementById('modal-image');
+        const modalBodyContent = document.getElementById('modal-body-content');
+
+        /**
+         * Affiche la modale avec des informations personnalisées.
+         * @param {string} title - Le titre à afficher.
+         * @param {string} icon - L'emoji ou icône.
+         * @param {string} color - Le fond (CSS) de l'icône.
+         * @param {string} bodyHtml - Le contenu HTML principal de la modale.
+         */
+
+        function showInfoModal(title, icon, color, bodyHtml) {
+            modalTitle.textContent = title;
+            modalImage.innerHTML = `<img src="${icon}" alt="${title}" style="width:100px; height:100px; object-fit:cover;">`;
+            modalImage.style.background = color;
+            modalBodyContent.innerHTML = bodyHtml;
+
+            modal.style.display = 'flex';
+        }
+        
+
+        function closeInfoModal() {
+            modal.style.display = 'none';
+        }
+        displayMeals("tous");
+        /* --- FIN SCRIPT MODALE --- */
+
+    </script>
+</body>
+</html>
